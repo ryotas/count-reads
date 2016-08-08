@@ -1,0 +1,17 @@
+<tool id="peak_reads" name="Count Peak Reads" version="0.1">
+  <description></description>
+  <command interpreter="perl">
+    peak_reads.pl $bam_file $bam_file.metadata.bam_index $peaklist_file $output_file
+  </command>
+  <inputs>
+    <param name="bam_file" type="data" format="bam" label="BAM File" />
+    <param name="peaklist_file" type="data" format="bed" label="Peak List File" />
+  </inputs>
+  <outputs>
+    <data name="output_file" format="tabular" label="${tool.name} on ${on_string} (tabular)"/>
+  </outputs>
+  <help>
+**What it does**
+This tool count reads in peak regions.
+  </help>
+</tool>
