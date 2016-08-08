@@ -1,0 +1,23 @@
+<tool id="count_reads" name="Count Reads" version="0.4">
+  <description>for BAM files</description>
+  <command interpreter="perl">
+    count_reads.pl $bam_file $bam_file.metadata.bam_index $genelist_file $output_file $wsize $sliding_size $sliding_num $divide $multiply $output_bedgraph
+  </command>
+  <inputs>
+    <param name="bam_file" type="data" format="bam" label="BAM File" />
+    <param name="genelist_file" type="data" format="tabular" label="Gene List File" />
+    <param name="wsize" type="integer" label="Window size (bp)" value="300" help="" />
+    <param name="sliding_size" type="integer" label="Size of Slidings (bp)" value="100" />
+    <param name="sliding_num" type="integer" label="Number of Slidings" value="10" />
+    <param name="divide" type="boolean" truevalue="1" falsevalue="0" checked="False" label="Divide by Total Read Count" help="" />
+    <param name="multiply" type="integer" label="Multiply Constant Number" value="1" />
+  </inputs>
+  <outputs>
+    <data name="output_file" format="tabular" label="${tool.name} on ${on_string} (tabular)"/>
+    <data name="output_bedgraph" format="gz" label="${tool.name} on ${on_string} (bedgraph)"/>
+  </outputs>
+  <help>
+**What it does**
+This tool count reads for BAM files.
+  </help>
+</tool>
