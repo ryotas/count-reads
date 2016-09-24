@@ -1,0 +1,4 @@
+  <section id="count_reads" name="Count Reads">
+    <tool file="count-reads/count_reads.xml" />
+    <tool file="count-reads/peak_reads.xml" />
+  </section>
